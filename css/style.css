@@ -1,0 +1,53 @@
+/* class 'main-color' that Sets the background color of elements that using it to  #0d0d0d */
+.main-color {
+  background-color: #0d0d0d !important;
+}
+
+/* Style the placeholder text within elements having the class 'placeholder-white' to be white  */
+.placeholder-white::placeholder {
+  color: white !important;
+}
+
+/* Define the style for the 'layer' class */
+.layer {
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  padding-left: 25px;
+  margin-left: 12px;
+  margin-right: 12px;
+  transform: translateY(120%);
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+/* When the '.item' element is hovered, apply the following styles to the child element with the class 'layer' */
+.item:hover .layer {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/* Set the width of the image to 50 pixels that are  within the 'side-nav-menu' */
+.side-nav-menu .nav-header img {
+  width: 50px;
+}
+
+.nav-content {
+  white-space: nowrap;
+  width: 250px;
+  padding: 15px;
+}
+
+li,
+i,
+.layer,
+img {
+  cursor: pointer;
+}
+
+.error-message {
+  color: white; 
+  background-color: rgba(255, 0, 0,0.3);
+  margin-top: 3px;
+  padding: 5px; 
+  border-radius: 10px; 
+}

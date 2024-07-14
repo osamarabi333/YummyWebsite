@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yummy</title>
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+  <!-- Animate.css for animations -->
+  <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="main-color">
+  <!-- Sidebar navigation menu -->
+  <div class="side-nav-menu min-vh-100 position-fixed d-flex top-0 bg-light z-3">
+    <!-- Sidebar content -->
+    <div class="nav-content overflow-hidden d-flex flex-column align-items-start justify-content-between main-color text-white" style="width: 0; padding: 0">
+      <!-- Navigation links -->
+      <div class="nav-links">
+        <ul class="links list-unstyled overflow-hidden">
+          <!-- Each navigation item -->
+          <li class="py-2 position-relative" onclick="showSearchInputs(),removeContactForm()">Search</li>
+          <li class="py-2 position-relative" onclick="displayCategories() ,removeContactForm()">Categories</li>
+          <li class="py-2 position-relative" onclick="displayAreas(),removeContactForm()">Area</li>
+          <li class="py-2 position-relative" onclick="displayIngredients(),removeContactForm()">Ingredients</li>
+          <li class="py-2 position-relative" onclick="displayContactForm()">Contact Us</li> <!-- Clicking this shows the contact form -->
+        </ul>
+      </div>
+      <!-- Footer with social icons -->
+      <div class="nav-footer">
+        <div class="nav-icons">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-solid fa-globe"></i>
+        </div>
+        <footer>
+          <p class="p-0">
+            Copyright RABI3 2024 All Rights <br />
+            Reserved.
+          </p>
+        </footer>
+      </div>
+    </div>
+    <!-- Sidebar header -->
+    <div class="nav-header d-flex flex-column justify-content-between align-items-center py-4 px-2">
+      <img src="images/logo.png" alt="" onclick="displayHomeMeals()" /> <!-- Clicking the logo returns to home meals -->
+      <i class="fa-solid open-close-icon fa-2x fa-align-justify"></i> <!-- Icon for toggling sidebar -->
+      <div class="nav-header-icons">
+        <i class="fa-solid fa-globe d-block"></i>
+        <i class="fa-solid fa-share-nodes"></i>
+      </div>
+    </div>
+  </div>
+  <!-- Container for search inputs -->
+  <div class="container w-75" id="searchContainer"></div>
+  <!-- Container for home meals content -->
+  <div class="container home-container">
+    <div class="row" id="home-row"></div>
+  </div>
+  <!-- Container for meals page -->
+  <div class="min-vh-100 d-none meals-page">
+    <div class="container text-white">
+      <div class="row py-5" id="mealsPage"></div>
+    </div>
+  </div>
+  <!-- Contact form section  -->
+  <div class="contact min-vh-100 d-flex justify-content-center align-items-center d-none">
+    <div class="container w-75 text-center">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <input id="nameInput" type="text" class="form-control border-danger border-3" placeholder="Enter Your Name" />
+          <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Special characters and numbers not allowed
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input id="emailInput" type="email" class="form-control border-danger border-3" placeholder="Enter Your Email" />
+          <div id="emailAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Email not valid *exemple@yyy.zzz
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input id="phoneInput" type="text" class="form-control border-danger border-3" placeholder="Enter Your Phone" />
+          <div id="phoneAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Enter valid Phone Number
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input id="ageInput" type="number" class="form-control border-danger border-3" placeholder="Enter Your Age" />
+          <div id="ageAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Enter valid age
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input id="passwordInput" type="password" class="form-control border-danger border-3" placeholder="Enter Your Password" />
+          <div id="passwordAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Enter valid password *Minimum eight characters, at least one letter and one number:*
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input id="repasswordInput" type="password" class="form-control border-danger border-3" placeholder="Repassword" />
+          <div id="repasswordAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Enter valid repassword
+          </div>
+        </div>
+      </div>
+      <!-- Submit button for the form -->
+      <button id="submitBtn" disabled="" class="btn btn-outline-danger px-2 mt-3">Submit</button>
+    </div>
+  </div>
+  <!-- JavaScript libraries (jQuery, Bootstrap) -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="js/index.js"></script>
+</body>
+</html>
