@@ -52,3 +52,32 @@ img {
   border-radius: 10px; 
 }
 
+@media (max-width: 768px) {
+
+
+  .container {
+    width: 75% !important;
+    padding: 0 35px ;
+    
+  }
+
+  .contact .container {
+    width: 70% !important;
+  }
+
+  .nav-header img {
+    width: 40px;
+  }
+
+  .nav-header-icons {
+    display: none; /* Hide additional icons on mobile */
+  }
+
+  .nav-footer p {
+    font-size: 12px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+}
