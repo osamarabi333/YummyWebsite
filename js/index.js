@@ -1,22 +1,35 @@
-// Function to initialize page elements and event listeners
 $(function () {
   // Ensure nav-content is initially closed on page load
   $(".nav-content").css({ width: "0", padding: "0" });
 
+  // Function to close the nav menu
+  function closeNavMenu() {
+    $(".open-close-icon").removeClass("fa-x").addClass("fa-align-justify");
+    $(".nav-links ul")
+      .removeClass("animate__animated animate__fadeInBottomLeft")
+      .addClass("animate__animated animate__fadeOutBottomLeft");
+    $(".nav-content").animate({ width: "0", padding: "0" }, 800);
+  }
+
   // Toggle functionality when clicking the open-close-icon
   $(".open-close-icon").on("click", function () {
     if ($(this).hasClass("fa-x")) {
-      $(this).removeClass("fa-x").addClass("fa-align-justify");
-      $(".nav-links ul")
-        .removeClass("animate__animated animate__fadeInBottomLeft")
-        .addClass("animate__animated animate__fadeOutBottomLeft");
-      $(".nav-content").animate({ width: "0", padding: "0" }, 800);
+      closeNavMenu();
     } else {
       $(this).addClass("fa-x").removeClass("fa-align-justify");
       $(".nav-links ul")
         .removeClass("animate__animated animate__fadeOutBottomLeft")
         .addClass("animate__animated animate__fadeInBottomLeft");
       $(".nav-content").animate({ width: "250px", padding: "15px" }, 800);
+    }
+  });
+
+  // Close nav menu when a nav link is clicked
+  $(".nav-links li").on("click", function () {
+    closeNavMenu();
+    if (!$(".meals-page").hasClass("d-none")) {
+      // Check if not hidden already
+      $(".meals-page").addClass("d-none");
     }
   });
 });
